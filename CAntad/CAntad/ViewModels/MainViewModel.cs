@@ -13,13 +13,14 @@ namespace CAntad.ViewModels
         public UserSession UserSession { get; set; }
         public BienvenidoViewModel Bienvenido { get; set; }
         public ObservableCollection<MenuItemViewModel> Menu { get; set; }
-
+        public PreregistroViewModel Preregistro { get; set; }
+        public RegistroUnoViewModel RegistroUno { get; set; }
         /*
 
         public LoginViewModel Login { get; set; }
         public EditarUsuarioViewModel EditarUsuario { get; set; }
         public RegistroViewModel Register { get; set; }
-        public RegistroUnoViewModel RegistroUno { get; set; }
+
         public RegistroDosViewModel RegistroDos { get; set; }
         public RegistroTresViewModel RegistroTres { get; set; }
         public RegistroCuatroViewModel RegistroCuatro { get; set; }
@@ -29,7 +30,7 @@ namespace CAntad.ViewModels
         public RegistroOchoViewModel RegistroOcho { get; set; }
         public RegistroNueveViewModel RegistroNueve { get; set; }
         public RegistroExitosoViewModel RegistroExitoso { get; set; }
-        public PreregistroViewModel Preregistro { get; set; }
+
         public EventoOperacionViewModel EventoOperacion { get; set; }
 
         public EventoDetalleViewModel EventoDeta { get; set; }

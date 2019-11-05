@@ -166,4 +166,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\fondobar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logoapp.png" />
+  </ItemGroup>
 </Project>

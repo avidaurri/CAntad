@@ -1,6 +1,14 @@
-﻿using System;
+﻿using CAntad.Helpers;
+using CAntad.Services;
+using CAntad.Views;
+using GalaSoft.MvvmLight.Command;
+using ModelsLibraryAntad.Models;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace CAntad.ViewModels
 {
@@ -10,7 +18,7 @@ namespace CAntad.ViewModels
         #region Atributes
         private bool isRunning;
         private bool isEnabled;
-        //private ApiService apiService;
+        private ApiService apiService;
         #endregion
 
         #region Properties
@@ -52,7 +60,7 @@ namespace CAntad.ViewModels
         #region Commands
 
 
-        /*public ICommand RegisterCommand
+        public ICommand RegisterCommand
         {
             get
             {
@@ -75,6 +83,7 @@ namespace CAntad.ViewModels
             }
 
         }
+
 
         private async void Login()
         {
@@ -102,7 +111,7 @@ namespace CAntad.ViewModels
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
-                await Application.Current.MainPage.DisplayAlert(Languages.Error, connection.Message, Languages.Accept);
+                await Application.Current.MainPage.DisplayAlert("Aviso", connection.Message,"Aceptar");
                 return;
             }
 
@@ -126,9 +135,9 @@ namespace CAntad.ViewModels
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    Languages.Error,
+                    "Aviso",
                     response.Message,
-                    Languages.Accept);
+                    "Aceptar");
                 return;
             }
             this.IsRunning = false;
@@ -177,7 +186,7 @@ namespace CAntad.ViewModels
 
             }
 
-        }*/
+        }
         #endregion
     }
 }
