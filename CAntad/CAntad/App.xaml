@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:infra="clr-namespace:CAntad.Infrastructure"
+             mc:Ignorable="d"
+             x:Class="CAntad.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- fuentes-->
+            <OnPlatform x:Key="MontserratBlack" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Montserrat-Black.otf"/>
+                <On Platform="Android" Value="Montserrat-Black.otf#Montserrat-Black."/>
+            </OnPlatform>
+            <OnPlatform x:Key="MontserratBold" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Montserrat-Bold.otf"/>
+                <On Platform="Android" Value="Montserrat-Bold.otf#Montserrat-Bold."/>
+            </OnPlatform>
+            <OnPlatform x:Key="MontserratHairline" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Montserrat-Hairline.otf"/>
+                <On Platform="Android" Value="Montserrat-Hairline.otf#Montserrat-Hairline."/>
+            </OnPlatform>
+            <OnPlatform x:Key="MontserratLight" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Montserrat-Light.otf"/>
+                <On Platform="Android" Value="Montserrat-Light.otf#Montserrat-Light."/>
+            </OnPlatform>
+            <OnPlatform x:Key="MontserratRegular" x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Montserrat-Regular.otf"/>
+                <On Platform="Android" Value="Montserrat-Regular.otf#Montserrat-Regular."/>
+            </OnPlatform> 
+            
+            <!-- locator-->
+            <infra:InstanceLocator x:Key="Locator"/>
+            <!-- Parameters -->
+            <!-- 
+            <x:String x:Key="UrlMisEventosController">/MisEventos</x:String>
+            <x:String x:Key="UrlUsuarios">/Usuarios</x:String>
+         
+          
+            <x:String x:Key="UrlUserSession">/UserSession</x:String>
+           
+           
+            <x:String x:Key="UrlEventoMensajeDetalle">/EventoDetalle</x:String>
+           
+            <x:String x:Key="UrlDar">/Dar</x:String>
+            <x:String x:Key="UrlValidaEvento">/ValidaEvento</x:String>
+            <x:String x:Key="UrlEventoMensajeDetalle">/EventoDetalle</x:String>
+            <x:String x:Key="UrlEvento">/Evento</x:String>
+            <x:String x:Key="UrlIntramuro">/Intramuro</x:String>
+            <x:String x:Key="UrlAPI">https://apiantaddemo.trademetrix.online</x:String>
+            <x:String x:Key="UrlPrefix">/api</x:String>
+            <x:String x:Key="UrlRegistro">/Registro</x:String>
+            <x:String x:Key="UrlGetCatalogo">/CatalogoRegistro</x:String>
+            <x:String x:Key="UrlLoginApp">/UserSession</x:String>  
+            -->
+
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

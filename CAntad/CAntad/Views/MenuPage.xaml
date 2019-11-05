@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CAntad.Views.MenuPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Menu"
+        BackgroundColor="Yellow">
+    <ContentPage.Content>
+
+        <StackLayout BindingContext="{Binding Bienvenido}" BackgroundColor="Transparent" Margin="5"  Opacity=".9" >
+            <Label Margin="0,7,0,13"
+                FontAttributes="Bold"
+                FontSize="19"
+                FontFamily="{StaticResource MontserratBold}"
+                HorizontalOptions="Center"
+                Text="{Binding UserName}"
+                TextColor="White">
+            </Label>
+
+            <controls:CircleImage
+                Source="{Binding ImageUser}"
+                Aspect="AspectFill"
+                WidthRequest="150"
+                HeightRequest="150">
+            </controls:CircleImage>
+
+
+            <ListView
+                BackgroundColor="Transparent"
+                ItemsSource="{Binding Menu}"
+                HasUnevenRows="True"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowSpacing="15">
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GotoCommand}"/>
+                                </Grid.GestureRecognizers>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="35" />
+                                    <RowDefinition Height="10" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Margin="2,0,2,0"
+                          Grid.Column="0"
+                          Source="vinetalogoa"
+                          WidthRequest="25"
+                          HeightRequest="25">
+                                </Image>
+                                <!-- Source="{Binding Icon}" -->
+                                <Label  FontFamily="{StaticResource MontserratRegular}"
+                          Grid.Column="1"
+                          VerticalOptions="Center"
+                          TextColor="Purple"
+                          FontSize="16"
+                              
+                          Text="{Binding Title}">
+                                </Label>
+                                <Image Source="separat" Grid.Row="1" Grid.ColumnSpan="2" HeightRequest="10"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
