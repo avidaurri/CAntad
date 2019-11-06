@@ -188,6 +188,7 @@
     <BundleResource Include="Resources\logoapp.png" />
   </ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <ItemGroup>
     <BundleResource Include="Resources\scan_code.png" />
   </ItemGroup>
@@ -224,6 +225,8 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_camara.png" />
   </ItemGroup>
+=======
+>>>>>>> parent of 69d3001... pop, tabs e imagenes
 =======
 >>>>>>> parent of 69d3001... pop, tabs e imagenes
 </Project>

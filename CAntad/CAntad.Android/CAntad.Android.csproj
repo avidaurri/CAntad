@@ -136,6 +136,7 @@
     <AndroidResource Include="Resources\drawable\logoapp.png" />
   </ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\scan_code.png" />
   </ItemGroup>
@@ -193,6 +194,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\xml\file_paths.xml" />
   </ItemGroup>
+=======
+>>>>>>> parent of 69d3001... pop, tabs e imagenes
 =======
 >>>>>>> parent of 69d3001... pop, tabs e imagenes
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
