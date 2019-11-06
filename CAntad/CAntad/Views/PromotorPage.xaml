@@ -4,12 +4,108 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CAntad.Views.PromotorPage">
+             x:Class="CAntad.Views.PromotorPage"
+                          BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundImageSource="fondoaltt"
+             Title="Mis Eventos">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <!--<RowDefinition Height="Auto" /> -->
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!--<Frame  HasShadow="True" BackgroundColor="Purple"  Margin="0" Padding="0" HeightRequest="80" VerticalOptions="Start">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label  Text="MIS EVENTOS" TextColor="White" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                </Grid>
+            </Frame>-->
+
+            <StackLayout Grid.Row="0" 
+                    BindingContext="{Binding Promotor}"
+                    Padding="5">
+                <ScrollView>
+
+                    <ListView
+                         HasUnevenRows="True"
+                        ItemsSource="{Binding Eventos}"
+                        IsRefreshing="{Binding IsRefreshing}"
+                        RefreshCommand="{Binding RefreshCommand}"
+                        IsPullToRefreshEnabled="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+
+                                <ViewCell >
+                                    <Frame HasShadow="True" CornerRadius="10" Margin="0,5,0,5" Opacity=".9">
+
+                                        <Grid >
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding DetalleEventoCommand}"/>
+                                            </Grid.GestureRecognizers>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="{Binding folioProyecto}" Grid.Column="0" FontSize="Micro" HorizontalTextAlignment="Center" FontAttributes="Bold"   FontFamily="{StaticResource MontserratBold}"/>
+                                            <Label Text="{Binding agencia}"  Grid.Column="1" FontSize="Micro" Grid.ColumnSpan="3" HorizontalTextAlignment="Start"   FontFamily="{StaticResource MontserratRegular}"/>
+                                            <StackLayout Grid.Column="0" Grid.RowSpan="4" Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                                                <Image       WidthRequest="80"                                    
+                                           Source="{Binding fotoCadenaCentroTrabajo}" VerticalOptions="Center">
+                                                </Image>
+                                            </StackLayout>
+
+
+
+                                            <Label Grid.Row="1" Grid.Column="1" Text="Donde" FontSize="Micro"  FontFamily="{StaticResource MontserratRegular}" />
+                                            <Label Grid.Row="1" Grid.Column="2" Text="{Binding nombreCentroTrabajo}" FontSize="Micro" FontFamily="{StaticResource MontserratLight}" />
+
+                                            <Label Grid.Row="2" Grid.Column="1" Text="Funcion" FontSize="Micro"  FontFamily="{StaticResource MontserratRegular}" />
+                                            <Label Grid.Row="2" Grid.Column="2" Text="{Binding puesto}" FontSize="Micro" FontFamily="{StaticResource MontserratLight}" />
+
+                                            <Label Grid.Row="3" Grid.Column="1" Text="Inicia" FontSize="Micro"  FontFamily="{StaticResource MontserratRegular}" />
+                                            <Label Grid.Row="3" Grid.Column="2" Text="{Binding fechaInicio}" FontSize="Micro" FontFamily="{StaticResource MontserratLight}" />
+
+                                            <Label Grid.Row="4" Grid.Column="1" Text="termina" FontSize="Micro" FontFamily="{StaticResource MontserratRegular}" />
+                                            <Label Grid.Row="4" Grid.Column="2" Text="{Binding fechaFinal}" FontSize="Micro" FontFamily="{StaticResource MontserratLight}" />
+
+                                            <StackLayout Grid.Column="3" Grid.RowSpan="4" Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                                                <Label Text="{Binding estadoEvento}" VerticalOptions="Center" FontSize="Micro"  FontFamily="{StaticResource MontserratRegular}"/>
+                                            </StackLayout>
+
+
+                                        </Grid>
+
+                                    </Frame>
+
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+            </StackLayout>
+
+
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>

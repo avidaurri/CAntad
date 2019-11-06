@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace CAntad.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RegistroUnoPage : ContentPage
+    public partial class EventoIncidenciasPage : ContentPage
     {
-        public RegistroUnoPage()
+        public EventoIncidenciasPage()
         {
             InitializeComponent();
         }

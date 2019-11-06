@@ -62,6 +62,7 @@ namespace CAntad.ViewModels
 
 
         #region Commands
+        [Obsolete]
         public ICommand UpdateDetailCommand
         {
             get

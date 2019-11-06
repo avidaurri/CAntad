@@ -245,6 +245,8 @@ namespace CAntad.ViewModels
         }
 
         private CatalogoRegistro.Estados _selectedEstado;
+
+        [Obsolete]
         public CatalogoRegistro.Estados SelectedEstado
         {
             get
@@ -260,6 +262,8 @@ namespace CAntad.ViewModels
                 cargaMun(_selectedEstado.key.ToString());
             }
         }
+
+        [Obsolete]
         private async void cargaMun(string val)
         {
             this.IsEnabled = false;

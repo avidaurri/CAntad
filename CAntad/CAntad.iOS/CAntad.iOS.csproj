@@ -169,4 +169,37 @@
   <ItemGroup>
     <BundleResource Include="Resources\logoapp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scan_code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\triste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\vistaqr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_incidenciastab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_informationtab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_desarrollotab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_bitacoratab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_pagostab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\vinetalogoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_vineta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\separat.png" />
+  </ItemGroup>
 </Project>

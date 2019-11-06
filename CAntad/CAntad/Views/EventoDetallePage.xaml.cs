@@ -6,18 +6,15 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-//using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace CAntad.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DetalleEventoTabbedPage : TabbedPage
+    public partial class EventoDetallePage : ContentPage
     {
-        //Xamarin.Forms.TabbedPage
-        public DetalleEventoTabbedPage()
+        public EventoDetallePage()
         {
             InitializeComponent();
-            // On<Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
         }
     }
 }
