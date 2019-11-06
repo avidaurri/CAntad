@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                          xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+             mc:Ignorable="d"
+             x:Class="CAntad.Views.Regis.RegistroOchoPage"
+                          BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundImageSource="fondoaltt"
+             Title="REGISTRO PASO 8/9" >
+    <Page.Resources>
+        <ResourceDictionary>
+            <!-- FlipAnimation-->
+            <xamanimation:StoryBoard x:Key="FloatingButtonEnter" 
+                                     Target="{x:Reference fraemeregocho}">
+                <xamanimation:FlipAnimation Duration="200" />
+
+            </xamanimation:StoryBoard>
+            <xamanimation:StoryBoard x:Key="rep" 
+                                     Target="{x:Reference imagerep}">
+                <xamanimation:RelRotateToAnimation                 Easing="Linear"
+                Duration="10000"
+                Rotation="360"
+               />
+
+            </xamanimation:StoryBoard>
+            <xamanimation:BounceInAnimation Duration="50"
+                x:Key="HeartAnimation"
+                Target="{x:Reference Heart}"/>
+            <xamanimation:BounceInAnimation Duration="50"
+                x:Key="HeartAnimationd"
+                Target="{x:Reference Heartd}"/>
+
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Page.Triggers>
+        <EventTrigger Event="Appearing">
+            <xamanimation:BeginAnimation 
+                Animation="{StaticResource FloatingButtonEnter}"/>
+        </EventTrigger>
+        <EventTrigger Event="Appearing">
+            <xamanimation:BeginAnimation
+                Animation="{StaticResource rep}"/>
+        </EventTrigger>
+    </Page.Triggers>
+    <ContentPage.Content>
+        <Frame Margin="30" Padding="20" HasShadow="True" BindingContext="{Binding RegistroUno}" Opacity=".8"  x:Name="fraemeregocho">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="Fotografia de tu identificación"
+                    FontFamily="{StaticResource MontserratBlack}" TextColor="DimGray" FontSize="17" HorizontalTextAlignment="Center" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="Paso 8/9"
+                    FontFamily="{StaticResource MontserratBold}"  FontSize="16" HorizontalTextAlignment="Center" />
+                </StackLayout>
+
+                <ScrollView Grid.Row="2">
+                    <StackLayout   Orientation="Vertical" VerticalOptions="CenterAndExpand"  >
+
+
+                        <Image
+                            HeightRequest="350" x:Name="imagerep"
+                            Source="{Binding ImageSourceComprobante}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CargarComprobanteCommand}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            TextColor="DimGray"
+                            HorizontalTextAlignment="Center"
+                            FontFamily="{StaticResource MontserratLight}"
+                            Text="Da click en el icono para activar la camara o para seleccionar alguna foto en tu equipo">
+                        </Label>
+
+
+                    </StackLayout>
+                </ScrollView>
+                <StackLayout  Grid.Row="3" Orientation="Vertical" VerticalOptions="End" >
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Button Text="ATRAS" BackgroundColor="DeepSkyBlue" TextColor="White"  CornerRadius="3" x:Name="Heartd"
+                                HorizontalOptions="FillAndExpand" Clicked="Heartd_Clicked">
+                            <Button.Triggers>
+                                <EventTrigger Event="Clicked">
+                                    <xamanimation:BeginAnimation
+                                                Animation="{StaticResource HeartAnimationd}" />
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+
+                        <Button Text="SIGUIENTE" BackgroundColor="Purple" TextColor="White" CornerRadius="3" x:Name="Heart"
+                                HorizontalOptions="FillAndExpand" Command="{Binding IrNueveCommand}"   >
+                            <Button.Triggers>
+                                <EventTrigger Event="Clicked">
+                                    <xamanimation:BeginAnimation
+                                                Animation="{StaticResource HeartAnimation}" />
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+                    </StackLayout>
+
+                </StackLayout>
+
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

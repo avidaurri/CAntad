@@ -15,6 +15,7 @@ namespace CAntad.ViewModels
         public ObservableCollection<MenuItemViewModel> Menu { get; set; }
         public PreregistroViewModel Preregistro { get; set; }
         public RegistroUnoViewModel RegistroUno { get; set; }
+        public RegistroExitosoViewModel RegistroExitoso { get; set; }
         /*
 
         public LoginViewModel Login { get; set; }
@@ -29,7 +30,7 @@ namespace CAntad.ViewModels
         public RegistroSieteViewModel RegistroSiete { get; set; }
         public RegistroOchoViewModel RegistroOcho { get; set; }
         public RegistroNueveViewModel RegistroNueve { get; set; }
-        public RegistroExitosoViewModel RegistroExitoso { get; set; }
+ 
 
         public EventoOperacionViewModel EventoOperacion { get; set; }
 

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+             mc:Ignorable="d"
+             x:Class="CAntad.Views.Regis.RegistroExitosoPage"
+                          BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundImageSource="fondoaltt"
+             Title="REGISTRO EXITOSO" >
+    <Page.Resources>
+        <ResourceDictionary>
+            <!-- FlipAnimation-->
+            <xamanimation:StoryBoard x:Key="FloatingButtonEnter" 
+                                     Target="{x:Reference framefinal}">
+                <xamanimation:FlipAnimation Duration="200" />
+
+            </xamanimation:StoryBoard>
+            <xamanimation:BounceInAnimation Duration="50"
+                x:Key="HeartAnimation"
+                Target="{x:Reference Heart}"/>
+
+
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Page.Triggers>
+        <EventTrigger Event="Appearing">
+            <xamanimation:BeginAnimation 
+                Animation="{StaticResource FloatingButtonEnter}"/>
+        </EventTrigger>
+    </Page.Triggers>
+    <ContentPage.Content>
+        <Frame Margin="30" Padding="5" HasShadow="True" BindingContext="{Binding RegistroExitoso}" Opacity=".8" x:Name="framefinal">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="Felicidades" TextColor="Purple"
+                    FontFamily="{StaticResource MontserratBlack}" FontSize="19" HorizontalTextAlignment="Center" />
+                    <Label Text="{Binding NombreReg}" TextColor="Purple"
+                    FontFamily="{StaticResource MontserratBlack}" FontSize="19" HorizontalTextAlignment="Center" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="Tu registro concluyo satisfactoriamente"
+                    FontFamily="{StaticResource MontserratBold}"  FontSize="16" HorizontalTextAlignment="Center" />
+                </StackLayout>
+
+                <ScrollView Grid.Row="2">
+                    <StackLayout   Orientation="Vertical" VerticalOptions="StartAndExpand"  >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                        </Grid>
+
+                        <StackLayout Margin="2,8,2,8" Grid.Row="0" Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                            <Label FontSize="13" Text="Te has postulado para el puesto de" HorizontalTextAlignment="Center" FontFamily="{StaticResource MontserratBold}" />
+                        </StackLayout>
+
+                        <StackLayout Margin="2,8,2,8" Grid.Row="0" Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                            <Label Text="{Binding PuestoReg}" HorizontalTextAlignment="Center"
+                              FontSize="15"   FontFamily="{StaticResource MontserratBlack}" />
+                        </StackLayout>
+
+                        <StackLayout Margin="2,8,2,8" Grid.Row="0" Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                            <Label Text="En este momento evaluaremos tu perfil para poder asignarte actividades de acuerdo a tus actitudes y aptitudes"
+                             FontSize="13"  HorizontalTextAlignment="Center" FontFamily="{StaticResource MontserratRegular}"  />
+                        </StackLayout>
+                        <StackLayout Margin="2,8,2,8" Grid.Row="0" Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                            <Label Text="Ya falta poco para que formes parte de CIRCULO ANTAD" 
+                             FontSize="13"  HorizontalTextAlignment="Center" FontFamily="{StaticResource MontserratRegular}" />
+                        </StackLayout>
+                        <StackLayout Margin="2,8,2,8" Grid.Row="0" Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                            <Label Text="Mientras tanto te invitamos a que inicies sesión en nuestra APP y explores los Tips, los cuales se encuentran en la pantalla de Bienvenida"
+                               FontSize="13" HorizontalTextAlignment="Center" FontFamily="{StaticResource MontserratRegular}" />
+                        </StackLayout>
+
+
+
+
+
+
+
+                    </StackLayout>
+                </ScrollView>
+                <StackLayout  Grid.Row="3" Orientation="Vertical" VerticalOptions="End" >
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                        <Button Text="ENTERADO" BackgroundColor="Purple" TextColor="White" CornerRadius="3" x:Name="Heart"
+                                HorizontalOptions="FillAndExpand" Command="{Binding EnteradoCommand}"  
+                                 >
+                            <Button.Triggers>
+                                <EventTrigger Event="Clicked">
+                                    <xamanimation:BeginAnimation
+                                                Animation="{StaticResource HeartAnimation}" />
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+                    </StackLayout>
+
+                </StackLayout>
+
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
