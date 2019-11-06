@@ -133,6 +133,7 @@ namespace CAntad.Services
             }
 
         }
+<<<<<<< HEAD
         public async Task<Response> GetDetalleEvento<T>(string urlBase, string prefix, string controller, T model)
         {
             try
@@ -267,5 +268,7 @@ namespace CAntad.Services
             }
         }
 
+=======
+>>>>>>> parent of 41354cd... agregar zxing y pop
     }
 }

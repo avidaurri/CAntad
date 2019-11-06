@@ -1,5 +1,4 @@
 ﻿using CAntad.Helpers;
-using CAntad.Views;
 using GalaSoft.MvvmLight.Command;
 using ModelsLibraryAntad.Models;
 using Newtonsoft.Json;
@@ -13,7 +12,6 @@ namespace CAntad.ViewModels
 {
     public class BienvenidoViewModel : BaseViewModel
     {
-
 
 
         #region Properties
@@ -150,8 +148,7 @@ namespace CAntad.ViewModels
 
         #region Command
 
-        [Obsolete]
-        public ICommand DireccionarCommand
+        /*public ICommand DireccionarCommand
         {
             get
             {
@@ -161,26 +158,22 @@ namespace CAntad.ViewModels
             }
         }
 
-        [Obsolete]
         private async void Direccionar()
         {
-            //await Task.Delay(1000);
             string roo = this.Puesto;
             if (roo.Equals("3"))
             {
                 //intramuro
                 MainViewModel.GetInstance().Intramuro = new IntramuroViewModel();
-                //await Application.Current.MainPage.Navigation.PushAsync(new EditarUsuarioPage());
                 await App.Navigator.PushAsync(new IntramuroPage());
             }
             else if (roo.Equals("1"))
             {
                 //promotor
                 MainViewModel.GetInstance().Promotor = new PromotorViewModel();
-                //await Application.Current.MainPage.Navigation.PushAsync(new EditarUsuarioPage());
                 await App.Navigator.PushAsync(new PromotorPage());
             }
-        }
+        }*/
 
         #endregion
     }
