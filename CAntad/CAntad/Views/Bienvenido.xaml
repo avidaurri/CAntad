@@ -9,10 +9,41 @@
              BackgroundImageSource="fondoaltt"
              Title="ANTAD">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
+        <!--<StackLayout BindingContext="{Binding Bienvenido}" >
+            <Label Text="Bienvenido " FontSize="30"
+                VerticalOptions="CenterAndExpand"  HorizontalTextAlignment="Center"
                 HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+            <Button Text="IR A MIS ACTIVIDADES"  VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" BackgroundColor="BlueViolet" TextColor="White" CornerRadius="10"  Command="{Binding DireccionarCommand}" />
+        </StackLayout>-->
+        <Frame Grid.Row="1" Opacity=".9" BindingContext="{Binding Register}" Margin="20,20,20,30">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+
+                <StackLayout Orientation="Vertical" VerticalOptions="Center"  >
+                    <Label FontFamily="{StaticResource MontserratBold}" FontSize="17" TextColor="Purple" 
+                    Text="BIENVENIDO A TU GUIA ANTAD"
+                    HorizontalTextAlignment="Center" FontAttributes="Bold" VerticalTextAlignment="Start"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Grid.Row="1" VerticalOptions="Center">
+                    <Image Source="logoantad" >
+
+                    </Image>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2">
+                    <Button Text="VER GUIA" BackgroundColor="Purple" TextColor="White"/>
+
+                </StackLayout>
+
+            </Grid>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>
