@@ -1,6 +1,5 @@
 ﻿using CAntad.Services;
 using CAntad.Views;
-using CAntad.Views.Regis;
 using GalaSoft.MvvmLight.Command;
 using ModelsLibraryAntad.Models;
 using System;

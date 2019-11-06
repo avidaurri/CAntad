@@ -4,10 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CAntad.Views.IntramuroPage"
-                           BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             BackgroundImageSource="fondosplash"
-             Title="Mi Centro de Trabajo">
+             x:Class="CAntad.Views.IntramuroPage">
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding Intramuro}" >
             <Grid VerticalOptions="FillAndExpand"  >
@@ -62,6 +59,8 @@
 
                         <StackLayout   Grid.Row="1"   BackgroundColor="Transparent"  VerticalOptions="End">
 
+                            <!--<Button IsVisible="{Binding Sucursal.existeOperacion}" BackgroundColor="DarkBlue"  
+                                    Text="ESCANEAR QR" TextColor="White"  Command="{Binding ScanCommand}" VerticalOptions="End" />-->
                             <Label IsVisible="{Binding Sucursal.errorOperacion}"  Text="{Binding Sucursal.mensajeSucursal}" 
                                 FontSize="18" VerticalOptions="Center" TextColor="Gray" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
 
@@ -80,7 +79,7 @@
                 VerticalOptions="CenterAndExpand">
                     </ActivityIndicator>
                     <Button IsEnabled="{Binding Sucursal.IsEnabled}" VerticalOptions="End"
-                            Command="{Binding RefreshCommand}" BackgroundColor="Purple" Text="BUSCAR CENTRO DE TRABAJO" TextColor="White"></Button>
+                            Command="{Binding RefreshCommand}" BackgroundColor="Red" Text="ACTUALIZAR PANTALLA" TextColor="White"></Button>
                 </StackLayout>
 
             </Grid>

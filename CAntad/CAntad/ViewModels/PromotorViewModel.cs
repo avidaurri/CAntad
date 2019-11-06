@@ -70,7 +70,6 @@ namespace CAntad.ViewModels
         #endregion
 
         #region Commands
-        [Obsolete]
         public ICommand RefreshCommand
         {
             get
@@ -81,14 +80,12 @@ namespace CAntad.ViewModels
         #endregion
 
         #region Contructors
-        [Obsolete]
         public PromotorViewModel()
         {
             this.apiService = new ApiService();
             this.CargarEventos();
         }
 
-        [Obsolete]
         private async void CargarEventos()
         {
             this.IsRefreshing = true;

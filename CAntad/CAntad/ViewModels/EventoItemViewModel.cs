@@ -23,7 +23,6 @@ namespace CAntad.ViewModels
         #endregion
 
         #region Commands
-        [Obsolete]
         public ICommand DetalleEventoCommand
         {
             get
@@ -32,7 +31,6 @@ namespace CAntad.ViewModels
             }
         }
 
-        [Obsolete]
         private async void DetalleEvento()
         {
             MainViewModel.GetInstance().EventoDeta = new EventoDetalleViewModel(this.clvEmp, this.folioEvento);
