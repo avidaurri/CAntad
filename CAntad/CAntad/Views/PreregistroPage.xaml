@@ -3,13 +3,149 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
              mc:Ignorable="d"
-             x:Class="CAntad.Views.PreregistroPage">
+             x:Class="CAntad.Views.PreregistroPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundImageSource="fondoaltt"
+             Title="REGISTRO" >
+    <Page.Resources>
+        <ResourceDictionary>
+            <!-- FlipAnimation-->
+            <xamanimation:StoryBoard x:Key="FloatingButtonEnter" 
+                                     Target="{x:Reference framepre}">
+                <xamanimation:FlipAnimation Duration="200" />
+
+            </xamanimation:StoryBoard>
+
+            <xamanimation:BounceInAnimation Duration="50"
+                x:Key="HeartAnimation"
+                Target="{x:Reference Heart}"/>
+            <xamanimation:BounceInAnimation Duration="50"
+                x:Key="HeartAnimationd"
+                Target="{x:Reference Heartd}"/>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Page.Triggers>
+        <EventTrigger Event="Appearing">
+            <xamanimation:BeginAnimation 
+                Animation="{StaticResource FloatingButtonEnter}"/>
+        </EventTrigger>
+    </Page.Triggers>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Frame Margin="30" BackgroundColor="White" Padding="20" HasShadow="True" BindingContext="{Binding Preregistro}" x:Name="framepre" Opacity=".6">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="Agradecemos tu interés por ser parte de nuestra comunidad"
+                    FontFamily="{StaticResource MontserratBlack}" TextColor="DimGray" FontSize="15" HorizontalTextAlignment="Center" />
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="Para que tu registro sea ágil, te recomendamos tener a la mano la siguiente información"
+                    FontFamily="{StaticResource MontserratBold}"  FontSize="10" HorizontalTextAlignment="Center" />
+                </StackLayout>
+
+
+                <StackLayout  Grid.Row="2" Orientation="Vertical" VerticalOptions="CenterAndExpand"  >
+                    <ScrollView>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="15"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+
+
+
+                            <Image Grid.Column="0" Grid.Row="0" Source="ic_vineta" WidthRequest="15" />
+                            <Label Grid.Column="1" Grid.Row="0" Text="Datos Generales"  FontFamily="{StaticResource MontserratLight}" />
+
+                            <Image Grid.Column="0" Grid.Row="1" Source="ic_vineta" WidthRequest="15" />
+                            <Label Grid.Column="1" Grid.Row="1" Text="Teléfono"  FontFamily="{StaticResource MontserratLight}" />
+
+                            <Image Grid.Column="0" Grid.Row="2" Source="ic_vineta" WidthRequest="15" />
+                            <Label Grid.Column="1" Grid.Row="2" Text="Email"  FontFamily="{StaticResource MontserratLight}" />
+
+                            <Image Grid.Column="0" Grid.Row="3" Source="ic_vineta" WidthRequest="15" />
+                            <Label Grid.Column="1" Grid.Row="3" Text="Curp"  FontFamily="{StaticResource MontserratLight}" />
+
+                            <Image Grid.Column="0" Grid.Row="4" Source="ic_vineta" WidthRequest="15" />
+                            <Label Grid.Column="1" Grid.Row="4" Text="Peso y Altura"  FontFamily="{StaticResource MontserratLight}" />
+
+                            <Image Grid.Column="0" Grid.Row="5" Source="ic_vineta" WidthRequest="15" />
+                            <Label Grid.Column="1" Grid.Row="5" Text="Dirección"  FontFamily="{StaticResource MontserratLight}" />
+
+                            <Image Grid.Column="0" Grid.Row="6" Source="ic_vineta" WidthRequest="3" />
+                            <Label Grid.Column="1" Grid.Row="6" Text="Cuenta bancaria con Clave interbancaria a 18 digitos (clabe)"  FontFamily="{StaticResource MontserratLight}" />
+
+                            <Image Grid.Column="0" Grid.Row="7" Source="ic_vineta" WidthRequest="3" />
+                            <Label Grid.Column="1" Grid.Row="7" Text="Nombre y teléfono de algun familiar o conocido como referencia"  FontFamily="{StaticResource MontserratLight}" />
+
+                            <Image Grid.Column="0" Grid.Row="8" Source="ic_vineta" WidthRequest="15" />
+                            <Label Grid.Column="1" Grid.Row="8" Text="Fotografía de la persona (Imágen)"  FontFamily="{StaticResource MontserratLight}" />
+
+                            <Image Grid.Column="0" Grid.Row="9" Source="ic_vineta" WidthRequest="15" />
+                            <Label Grid.Column="1" Grid.Row="9" Text="Identificación oficial (Imágen)"  FontFamily="{StaticResource MontserratLight}" />
+
+                            <Image Grid.Column="0" Grid.Row="10" Source="ic_vineta" WidthRequest="15" />
+                            <Label Grid.Column="1" Grid.Row="10" Text="Comprobante de domicilio (Imágen)"  FontFamily="{StaticResource MontserratLight}" />
+
+
+                        </Grid>
+                    </ScrollView>
+
+                </StackLayout>
+
+                <StackLayout  Grid.Row="3" Orientation="Vertical" VerticalOptions="End"  >
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Button Text="CANCELAR" BackgroundColor="Red" TextColor="White"  CornerRadius="3" x:Name="Heartd"
+                                HorizontalOptions="FillAndExpand" Clicked="Heartd_Clicked" >
+                            <Button.Triggers>
+                                <EventTrigger Event="Clicked">
+                                    <xamanimation:BeginAnimation
+                                                Animation="{StaticResource HeartAnimationd}" />
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+                        <!--Command="{Binding RechazarRegistroCommand}" -->
+                        <Button Text="INICIAR" BackgroundColor="Purple" TextColor="White" CornerRadius="3" x:Name="Heart"
+                                HorizontalOptions="FillAndExpand" Command="{Binding AceptarRegistroCommand}"
+                                  IsEnabled="{Binding IsEnabled}">
+                            <Button.Triggers>
+                                <EventTrigger Event="Clicked">
+                                    <xamanimation:BeginAnimation
+                                                Animation="{StaticResource HeartAnimation}" />
+                                </EventTrigger>
+                            </Button.Triggers>
+                        </Button>
+                    </StackLayout>
+
+                </StackLayout>
+
+            </Grid>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>

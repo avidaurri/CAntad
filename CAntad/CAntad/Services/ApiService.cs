@@ -24,7 +24,7 @@ namespace CAntad.Services
                 };
             }
 
-            var isReachable = await CrossConnectivity.Current.IsRemoteReachable("google.com");
+            var isReachable = await CrossConnectivity.Current.IsRemoteReachable("https://www.google.com");
             if (!isReachable)
             {
                 return new Response

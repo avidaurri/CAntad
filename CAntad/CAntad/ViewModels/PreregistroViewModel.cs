@@ -41,6 +41,7 @@ namespace CAntad.ViewModels
         #region Commands
 
 
+        [Obsolete]
         public ICommand AceptarRegistroCommand
         {
             get
@@ -50,6 +51,7 @@ namespace CAntad.ViewModels
 
         }
 
+        [Obsolete]
         private async void AceptarRegistroAsync()
         {
             this.IsEnabled = false;

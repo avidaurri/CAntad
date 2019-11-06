@@ -16,5 +16,10 @@ namespace CAntad.Views
         {
             InitializeComponent();
         }
+
+        private async void Heartd_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
     }
 }

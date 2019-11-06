@@ -51,7 +51,7 @@ namespace CAntad.ViewModels
         #region Contructors
         public LoginViewModel()
         {
-            //this.apiService = new ApiService();
+            this.apiService = new ApiService();
             this.IsEnabled = true;
             this.IsRemembered = true;
         }
@@ -75,6 +75,7 @@ namespace CAntad.ViewModels
             await Application.Current.MainPage.Navigation.PushAsync(new PreregistroPage());
         }
 
+        [Obsolete]
         public ICommand LoginCommand
         {
             get
@@ -84,7 +85,7 @@ namespace CAntad.ViewModels
 
         }
 
-
+        [Obsolete]
         private async void Login()
         {
             if (string.IsNullOrEmpty(this.Usuario))

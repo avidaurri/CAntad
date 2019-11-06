@@ -48,14 +48,15 @@
             <x:String x:Key="UrlEventoMensajeDetalle">/EventoDetalle</x:String>
             <x:String x:Key="UrlEvento">/Evento</x:String>
             <x:String x:Key="UrlIntramuro">/Intramuro</x:String>
+
+            <x:String x:Key="UrlRegistro">/Registro</x:String>
+           
+         
+            -->
             <x:String x:Key="UrlAPI">https://apiantaddemo.trademetrix.online</x:String>
             <x:String x:Key="UrlPrefix">/api</x:String>
-            <x:String x:Key="UrlRegistro">/Registro</x:String>
-            <x:String x:Key="UrlGetCatalogo">/CatalogoRegistro</x:String>
             <x:String x:Key="UrlLoginApp">/UserSession</x:String>  
-            -->
-
-
+            <x:String x:Key="UrlGetCatalogo">/CatalogoRegistro</x:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
