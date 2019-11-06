@@ -62,8 +62,6 @@
 
                         <StackLayout   Grid.Row="1"   BackgroundColor="Transparent"  VerticalOptions="End">
 
-                            <!--<Button IsVisible="{Binding Sucursal.existeOperacion}" BackgroundColor="DarkBlue"  
-                                    Text="ESCANEAR QR" TextColor="White"  Command="{Binding ScanCommand}" VerticalOptions="End" />-->
                             <Label IsVisible="{Binding Sucursal.errorOperacion}"  Text="{Binding Sucursal.mensajeSucursal}" 
                                 FontSize="18" VerticalOptions="Center" TextColor="Gray" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
 
@@ -82,7 +80,7 @@
                 VerticalOptions="CenterAndExpand">
                     </ActivityIndicator>
                     <Button IsEnabled="{Binding Sucursal.IsEnabled}" VerticalOptions="End"
-                            Command="{Binding RefreshCommand}" BackgroundColor="Red" Text="ACTUALIZAR PANTALLA" TextColor="White"></Button>
+                            Command="{Binding RefreshCommand}" BackgroundColor="Purple" Text="BUSCAR CENTRO DE TRABAJO" TextColor="White"></Button>
                 </StackLayout>
 
             </Grid>

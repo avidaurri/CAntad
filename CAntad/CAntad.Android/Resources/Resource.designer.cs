@@ -4422,88 +4422,94 @@ namespace CAntad.Droid
 			public const int ic_bitacoratab = 2131165284;
 			
 			// aapt resource value: 0x7F070065
-			public const int ic_desarrollotab = 2131165285;
+			public const int ic_camara = 2131165285;
 			
 			// aapt resource value: 0x7F070066
-			public const int ic_incidenciastab = 2131165286;
+			public const int ic_desarrollotab = 2131165286;
 			
 			// aapt resource value: 0x7F070067
-			public const int ic_informationtab = 2131165287;
+			public const int ic_incidenciastab = 2131165287;
 			
 			// aapt resource value: 0x7F070068
-			public const int ic_pagostab = 2131165288;
+			public const int ic_informationtab = 2131165288;
 			
 			// aapt resource value: 0x7F070069
-			public const int ic_vineta = 2131165289;
+			public const int ic_launcher_logo = 2131165289;
 			
 			// aapt resource value: 0x7F07006A
-			public const int logoantad = 2131165290;
+			public const int ic_pagostab = 2131165290;
 			
 			// aapt resource value: 0x7F07006B
-			public const int logoapp = 2131165291;
+			public const int ic_vineta = 2131165291;
 			
 			// aapt resource value: 0x7F07006C
-			public const int menudetail = 2131165292;
+			public const int logoantad = 2131165292;
 			
 			// aapt resource value: 0x7F07006D
-			public const int navigation_empty_icon = 2131165293;
+			public const int logoapp = 2131165293;
 			
 			// aapt resource value: 0x7F07006E
-			public const int notification_action_background = 2131165294;
+			public const int menudetail = 2131165294;
 			
 			// aapt resource value: 0x7F07006F
-			public const int notification_bg = 2131165295;
+			public const int navigation_empty_icon = 2131165295;
 			
 			// aapt resource value: 0x7F070070
-			public const int notification_bg_low = 2131165296;
+			public const int notification_action_background = 2131165296;
 			
 			// aapt resource value: 0x7F070071
-			public const int notification_bg_low_normal = 2131165297;
+			public const int notification_bg = 2131165297;
 			
 			// aapt resource value: 0x7F070072
-			public const int notification_bg_low_pressed = 2131165298;
+			public const int notification_bg_low = 2131165298;
 			
 			// aapt resource value: 0x7F070073
-			public const int notification_bg_normal = 2131165299;
+			public const int notification_bg_low_normal = 2131165299;
 			
 			// aapt resource value: 0x7F070074
-			public const int notification_bg_normal_pressed = 2131165300;
+			public const int notification_bg_low_pressed = 2131165300;
 			
 			// aapt resource value: 0x7F070075
-			public const int notification_icon_background = 2131165301;
+			public const int notification_bg_normal = 2131165301;
 			
 			// aapt resource value: 0x7F070076
-			public const int notification_template_icon_bg = 2131165302;
+			public const int notification_bg_normal_pressed = 2131165302;
 			
 			// aapt resource value: 0x7F070077
-			public const int notification_template_icon_low_bg = 2131165303;
+			public const int notification_icon_background = 2131165303;
 			
 			// aapt resource value: 0x7F070078
-			public const int notification_tile_bg = 2131165304;
+			public const int notification_template_icon_bg = 2131165304;
 			
 			// aapt resource value: 0x7F070079
-			public const int notify_panel_notification_icon_bg = 2131165305;
+			public const int notification_template_icon_low_bg = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int scan_code = 2131165306;
+			public const int notification_tile_bg = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int separat = 2131165307;
+			public const int notify_panel_notification_icon_bg = 2131165307;
 			
 			// aapt resource value: 0x7F07007C
-			public const int tooltip_frame_dark = 2131165308;
+			public const int scan_code = 2131165308;
 			
 			// aapt resource value: 0x7F07007D
-			public const int tooltip_frame_light = 2131165309;
+			public const int separat = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int triste = 2131165310;
+			public const int tooltip_frame_dark = 2131165310;
 			
 			// aapt resource value: 0x7F07007F
-			public const int vinetalogoa = 2131165311;
+			public const int tooltip_frame_light = 2131165311;
 			
 			// aapt resource value: 0x7F070080
-			public const int vistaqr = 2131165312;
+			public const int triste = 2131165312;
+			
+			// aapt resource value: 0x7F070081
+			public const int vinetalogoa = 2131165313;
+			
+			// aapt resource value: 0x7F070082
+			public const int vistaqr = 2131165314;
 			
 			static Drawable()
 			{
@@ -5355,14 +5361,17 @@ namespace CAntad.Droid
 		public partial class Mipmap
 		{
 			
-			// aapt resource value: 0x7F0B0000
-			public const int icon = 2131427328;
-			
 			// aapt resource value: 0x7F0B0001
-			public const int icon_round = 2131427329;
+			public const int icon = 2131427329;
 			
 			// aapt resource value: 0x7F0B0002
-			public const int launcher_foreground = 2131427330;
+			public const int icon_round = 2131427330;
+			
+			// aapt resource value: 0x7F0B0000
+			public const int ic_launcher_logo = 2131427328;
+			
+			// aapt resource value: 0x7F0B0003
+			public const int launcher_foreground = 2131427331;
 			
 			static Mipmap()
 			{
@@ -8872,7 +8881,10 @@ namespace CAntad.Droid
 		{
 			
 			// aapt resource value: 0x7F0F0000
-			public const int xamarin_essentials_fileprovider_file_paths = 2131689472;
+			public const int file_paths = 2131689472;
+			
+			// aapt resource value: 0x7F0F0001
+			public const int xamarin_essentials_fileprovider_file_paths = 2131689473;
 			
 			static Xml()
 			{
