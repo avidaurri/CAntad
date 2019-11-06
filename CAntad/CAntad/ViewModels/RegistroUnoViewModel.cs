@@ -268,7 +268,6 @@ namespace CAntad.ViewModels
 
             if (!connection.IsSuccess)
             {
-                this.IsEnabled = true;
                 //await Application.Current.MainPage.DisplayAlert(Languages.Error, connection.Message, Languages.Accept);
                 await Application.Current.MainPage.DisplayAlert("Mensaje", "Hubo un problema al cargar tu municipio, por favor selecciona tu estado nuevamente", "Aceptar");
                 return;
@@ -449,60 +448,6 @@ namespace CAntad.ViewModels
         #endregion
 
         #region Commands
-
-        
-                    public ICommand PruebaBotonCommand
-        {
-            get
-            {
-                return new RelayCommand(PruebaBoton);
-            }
-        }
-
-        private async void PruebaBoton()
-        {
-            //
-
-            var source = await Application.Current.MainPage.DisplayActionSheet(
-                "Elegir Imagen",
-                "Cancelar",
-                null,
-                "De Galería",
-                "Nueva Foto");
-
-await CrossMedia.Current.Initialize();
-            if (source == "Cancelar")
-            {
-                this.fileFoto = null;
-                return;
-            }
-
-            if (source == "Nueva Foto")
-            {
-                this.fileFoto = await CrossMedia.Current.TakePhotoAsync(
-                    new StoreCameraMediaOptions
-                    {
-                        Directory = "Sample",
-                        Name = "test.jpg",
-                        PhotoSize = PhotoSize.Small,
-                    }
-                );
-            }
-            else
-            {
-                this.fileFoto = await CrossMedia.Current.PickPhotoAsync();
-            }
-
-            if (this.fileFoto != null)
-            {
-                this.ImageSourceFoto = ImageSource.FromStream(() =>
-                {
-                    var stream = this.fileFoto.GetStream();
-                    return stream;
-                });
-            }
-        }
-
         public ICommand CargarImagenCommand
         {
             get
@@ -513,6 +458,7 @@ await CrossMedia.Current.Initialize();
 
         private async void CargarImagen()
         {
+            await CrossMedia.Current.Initialize();
 
             var source = await Application.Current.MainPage.DisplayActionSheet(
                 "Elegir Imagen",
@@ -521,7 +467,6 @@ await CrossMedia.Current.Initialize();
                 "De Galería",
                 "Nueva Foto");
 
-            await CrossMedia.Current.Initialize();
             if (source == "Cancelar")
             {
                 this.fileFoto = null;
@@ -699,7 +644,7 @@ await CrossMedia.Current.Initialize();
         {
 
             //Nombre
-            /*if (string.IsNullOrEmpty(this.Nombre))
+            if (string.IsNullOrEmpty(this.Nombre))
             {
                 await Application.Current.MainPage.DisplayAlert("Aviso de registro", "Escribe tu nombre", "Aceptar");
                 return;
@@ -779,7 +724,7 @@ await CrossMedia.Current.Initialize();
             {
                 await Application.Current.MainPage.DisplayAlert("Aviso de registro", "Selecciona el puesto que te interesa", "Aceptar");
                 return;
-            }*/
+            }
 
             Registro unreg = new Registro();
             unreg.nombre = this.Nombre;
@@ -807,7 +752,7 @@ await CrossMedia.Current.Initialize();
         private async void IrTres()
         {
 
-            /*if (this.GradoEstudiosText == null)
+            if (this.GradoEstudiosText == null)
             {
                 await Application.Current.MainPage.DisplayAlert("Aviso de registro", "Selecciona tu grado de estudios", "Aceptar");
                 return;
@@ -856,7 +801,7 @@ await CrossMedia.Current.Initialize();
             {
                 await Application.Current.MainPage.DisplayAlert("Aviso de registro", "Tu altura no debe exceder los 5 caracteres", "Aceptar");
                 return;
-            }*/
+            }
             this.Registro.clvGradoEstudios = Convert.ToInt32(this.GradoEstudiosText);
             this.Registro.estadoCivil = this.EstadoCivilText;
             this.Registro.peso = Convert.ToDouble(this.Peso);
@@ -879,7 +824,7 @@ await CrossMedia.Current.Initialize();
 
 
             //Calle
-            /*if (string.IsNullOrEmpty(this.Calle))
+            if (string.IsNullOrEmpty(this.Calle))
             {
                 await Application.Current.MainPage.DisplayAlert("Aviso de registro", "Escribe el nombre de tu calle", "Aceptar");
                 return;
@@ -948,7 +893,7 @@ await CrossMedia.Current.Initialize();
             {
                 await Application.Current.MainPage.DisplayAlert("Aviso de registro", "Código postal no valido", "Aceptar");
                 return;
-            }*/
+            }
 
             this.Registro.calle = this.Calle;
             this.Registro.numeroExterior = this.NumeroExterior;
@@ -972,7 +917,7 @@ await CrossMedia.Current.Initialize();
 
         private async void IrCinco()
         {
-            /*if (this.Colonia.Length > 30)
+            if (this.Colonia.Length > 30)
             {
                 await Application.Current.MainPage.DisplayAlert("Aviso de registro", "Tu colonia no debe exceder los 30 caracteres", "Aceptar");
                 return;
@@ -1023,7 +968,7 @@ await CrossMedia.Current.Initialize();
                     await Application.Current.MainPage.DisplayAlert("Aviso de registro", "Escribe un número de tarjeta de 16 dígitos", "Aceptar");
                     return;
                 }
-            }*/
+            }
 
 
 
@@ -1049,7 +994,7 @@ await CrossMedia.Current.Initialize();
         {
 
             //NombreReferenciaUno
-            /*if (string.IsNullOrEmpty(this.NombreReferenciaUno))
+            if (string.IsNullOrEmpty(this.NombreReferenciaUno))
             {
                 await Application.Current.MainPage.DisplayAlert("Aviso de registro", "Escribe el nombre de la referencia Uno", "Aceptar");
                 return;
@@ -1069,7 +1014,7 @@ await CrossMedia.Current.Initialize();
             {
                 await Application.Current.MainPage.DisplayAlert("Aviso de registro", "Escribe un teléfono de 10 dígitos para tu referencia", "Aceptar");
                 return;
-            }*/
+            }
 
 
             this.Registro.nombreReferenciaUno = this.NombreReferenciaUno;

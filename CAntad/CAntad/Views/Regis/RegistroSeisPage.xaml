@@ -74,7 +74,6 @@
                                 <TapGestureRecognizer Command="{Binding CargarImagenCommand}"/>
                             </Image.GestureRecognizers>
                         </Image>
-                        <Button Text="hhh" Command="{Binding PruebaBotonCommand}" />
                         <Label
                             FontSize="15"
                             HorizontalOptions="Center"

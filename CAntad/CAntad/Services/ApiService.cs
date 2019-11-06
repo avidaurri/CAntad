@@ -229,6 +229,7 @@ namespace CAntad.Services
                 };
             }
         }
+<<<<<<< HEAD
         public async Task<Response> Post(string urlBase, string prefix, string controller, int idEstado)
         {
             try
@@ -273,5 +274,7 @@ namespace CAntad.Services
 >>>>>>> parent of 41354cd... agregar zxing y pop
 =======
 >>>>>>> parent of 41354cd... agregar zxing y pop
+=======
+>>>>>>> parent of 3d8d04e... retroceder
     }
 }

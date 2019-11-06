@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CAntad.Views.IntramuroPage"
+                           BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundImageSource="fondosplash"
+             Title="Mi Centro de Trabajo">
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding Intramuro}" >
+            <Grid VerticalOptions="FillAndExpand"  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+
+
+                <Frame Grid.Row="0" IsVisible="{Binding Sucursal.existeSucursal}" Padding="2,2,2,9"  HasShadow="True" CornerRadius="10" Margin="20,15,20,0" 
+                       VerticalOptions="Start">
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Column="0" Orientation="Horizontal" Spacing="10" HorizontalOptions="CenterAndExpand">
+                            <Image Source="{Binding Sucursal.fotoEmpresa}" WidthRequest="80"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" Spacing="7" VerticalOptions="CenterAndExpand" Orientation="Vertical">
+                            <Label Text="{Binding Sucursal.nombreCentroTrabajo}" TextColor="Gray" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Image Source="{Binding Sucursal.fotoCentroTrabajo}" WidthRequest="80" />
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <StackLayout 
+                Grid.Row="1" >
+                    <Grid >
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <StackLayout    BackgroundColor="Transparent"  VerticalOptions="End">
+                            <StackLayout Orientation="Vertical" Spacing="10"  VerticalOptions="EndAndExpand">
+                                <Image Source="scan_code" WidthRequest="150" IsVisible="{Binding Sucursal.existeOperacion}" >
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ScanCommand}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Label Text="Presiona la imagen para escanear" HorizontalTextAlignment="Center" 
+                                       IsVisible="{Binding Sucursal.existeOperacion}" />
+                                <Image Source="triste" WidthRequest="100" IsVisible="{Binding Sucursal.errorOperacion}" />
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout   Grid.Row="1"   BackgroundColor="Transparent"  VerticalOptions="End">
+
+                            <!--<Button IsVisible="{Binding Sucursal.existeOperacion}" BackgroundColor="DarkBlue"  
+                                    Text="ESCANEAR QR" TextColor="White"  Command="{Binding ScanCommand}" VerticalOptions="End" />-->
+                            <Label IsVisible="{Binding Sucursal.errorOperacion}"  Text="{Binding Sucursal.mensajeSucursal}" 
+                                FontSize="18" VerticalOptions="Center" TextColor="Gray" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+
+                        </StackLayout>
+
+
+
+                    </Grid>
+
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" IsVisible="{Binding Sucursal.errorOperacion}" Orientation="Vertical" VerticalOptions="EndAndExpand" >
+                    <ActivityIndicator
+                IsRunning="{Binding Sucursal.IsRunning}"
+                VerticalOptions="CenterAndExpand">
+                    </ActivityIndicator>
+                    <Button IsEnabled="{Binding Sucursal.IsEnabled}" VerticalOptions="End"
+                            Command="{Binding RefreshCommand}" BackgroundColor="Red" Text="ACTUALIZAR PANTALLA" TextColor="White"></Button>
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
